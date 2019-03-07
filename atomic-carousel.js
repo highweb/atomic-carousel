@@ -23,3 +23,6 @@ function initCarousel($, context) {
     $owl.trigger('to.owl.carousel', owl.relative($this.index()));
   });
 }
+
+// @TODO: Don't init automatically.
+initCarousel($, document);
