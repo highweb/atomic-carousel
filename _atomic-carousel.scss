@@ -1,4 +1,5 @@
-@import "owl.carousel/src/scss/owl.carousel";
+$owl-image-path: '~owl.carousel/src/img/';
+@import "~owl.carousel/src/scss/owl.carousel";
 
 
 // Prevent jumping until js is ready:
