@@ -12,7 +12,18 @@ function initCarousel($, context) {
     var $this = $(this);
     var options = $.extend(defaults, $this.data('carousel'));
 
-    $this.owlCarousel(options);
+    var owl = $this.owlCarousel(options);
+
+    if (options.mousewheel) {
+      owl.on('mousewheel', '.owl-stage', function (e) {
+        if (e.deltaY > 0) {
+          owl.trigger('next.owl');
+        } else {
+          owl.trigger('prev.owl');
+        }
+        e.preventDefault();
+      });
+    }
   });
 
   $(document).on('click', '.owl-item', function() {
